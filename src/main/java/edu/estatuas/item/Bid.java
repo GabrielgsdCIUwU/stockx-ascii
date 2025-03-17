@@ -3,11 +3,11 @@ package edu.estatuas.item;
 public class Bid implements Offer {
     
     private String size;
-    private int bid;
+    private Integer bid;
 
     public Bid(String size, int bid) {
         this.size = size;
-        this.bid = bid;
+        this.bid = Integer.valueOf(bid);
     }
 
     @Override
@@ -17,7 +17,7 @@ public class Bid implements Offer {
 
     @Override
     public int value() {
-        return bid;
+        return bid.intValue();
     }
 
     @Override
