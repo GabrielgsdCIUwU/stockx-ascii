@@ -22,8 +22,7 @@ public class Ask implements Offer {
 
     @Override
     public int compareTo(Offer offer) {
-        // TODO Auto-generated method stub
-        return 0;
+        return ask.compareTo(offer.value());
     }
 
     @Override
