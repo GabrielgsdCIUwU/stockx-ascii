@@ -24,4 +24,13 @@ public class Sale implements Offer {
     public int compareTo(Offer offer) {
         return price.compareTo(offer.value());
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\t\t").append(size)
+            .append("\t").append(price).append("\n");
+
+        return sb.toString();
+    }
 }
