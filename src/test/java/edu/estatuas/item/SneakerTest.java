@@ -5,11 +5,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import edu.estatuas.item.Bid;
-
-/**
- * Unit test for simple App.
- */
 public class SneakerTest {
 
     @Test

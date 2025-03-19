@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import edu.estatuas.item.Ask;
 
 public class AskTest {
     
