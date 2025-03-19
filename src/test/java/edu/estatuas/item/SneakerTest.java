@@ -1,4 +1,4 @@
-package edu.estatuas;
+package edu.estatuas.item;
 
 
 import static org.junit.Assert.assertEquals;
