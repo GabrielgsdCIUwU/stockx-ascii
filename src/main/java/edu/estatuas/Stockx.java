@@ -1,5 +1,24 @@
 package edu.estatuas;
 
+import java.util.List;
+
+import edu.estatuas.criteria.AndCriteria;
+import edu.estatuas.criteria.Asks;
+import edu.estatuas.criteria.Bids;
+import edu.estatuas.criteria.Criteria;
+import edu.estatuas.criteria.LastSale;
+import edu.estatuas.criteria.Max;
+import edu.estatuas.criteria.MaxBid;
+import edu.estatuas.criteria.Min;
+import edu.estatuas.criteria.MinAsk;
+import edu.estatuas.criteria.Sales;
+import edu.estatuas.criteria.Size;
+import edu.estatuas.item.Ask;
+import edu.estatuas.item.Bid;
+import edu.estatuas.item.Item;
+import edu.estatuas.item.Offer;
+import edu.estatuas.item.Sale;
+import edu.estatuas.item.Sneaker;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo
