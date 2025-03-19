@@ -5,9 +5,9 @@ public class Sale implements Offer {
     private String size;
     private Integer price;
 
-    public Sale(String string, int size) {
+    public Sale(String string, int price) {
         this.size = string;
-        this.price = Integer.valueOf(size);
+        this.price = Integer.valueOf(price);
     }
 
     @Override
