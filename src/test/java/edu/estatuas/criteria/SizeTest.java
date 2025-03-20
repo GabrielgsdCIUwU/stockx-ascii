@@ -32,6 +32,7 @@ public class SizeTest {
         assertTrue(criteriaSize.stream().allMatch(o -> o.size().equals(searchSize)));
     }
 
+    @Test
     public void checkCriteriaSizeEmpty() {
         Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
 
@@ -43,6 +44,7 @@ public class SizeTest {
         assertTrue(criteriaSize.isEmpty());
     }
 
+    @Test
     public void checkCriteriaSizeEmptyWithOtherCriteria() {
         Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Bid("8", 250));

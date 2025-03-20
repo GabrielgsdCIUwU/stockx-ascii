@@ -25,6 +25,7 @@ public class BidsTest {
         assertTrue(criteriaBids.stream().allMatch(Bid.class::isInstance));
     }
 
+    @Test
     public void checkCriteriaBidsAsks() {
         Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Bid("8", 250));
@@ -39,6 +40,7 @@ public class BidsTest {
         assertTrue(criteriaBids.stream().allMatch(Bid.class::isInstance));
     }
 
+    @Test
     public void checkCriteriaBidsEmpty() {
         Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
 
