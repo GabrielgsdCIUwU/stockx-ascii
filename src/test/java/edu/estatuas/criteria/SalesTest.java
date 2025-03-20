@@ -24,7 +24,7 @@ public class SalesTest {
         Criteria sales = new Sales();
         List<Offer> criteriaSales = sales.checkCriteria(sneaker);
 
-        assertTrue(criteriaSales.stream().allMatch(Sales.class::isInstance));
+        assertTrue(criteriaSales.stream().allMatch(Sale.class::isInstance));
     }
 
     @Test
