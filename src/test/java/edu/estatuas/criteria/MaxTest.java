@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import edu.estatuas.item.Ask;
@@ -13,11 +14,14 @@ import edu.estatuas.item.Offer;
 import edu.estatuas.item.Sneaker;
 
 public class MaxTest {
+    private Sneaker sneaker;
+    @Before
+    public void setup() {
+        sneaker = new Sneaker("555088-105", "Jordan 1");  
+    }
     
     @Test
     public void checkCriteriaMax() {
-        
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Bid("6", 200));
         sneaker.add(new Bid("9.5", 479));
         sneaker.add(new Bid("13", 338));
@@ -36,8 +40,6 @@ public class MaxTest {
 
     @Test
     public void checkCriteriaMaxWithAsk() {
-
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Ask("9.5", 333));
         sneaker.add(new Ask("9.5", 500));
         sneaker.add(new Bid("13", 338));
@@ -57,8 +59,6 @@ public class MaxTest {
 
     @Test
     public void checkCriteriaMaxEmpty() {
-
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
 
         Criteria size = new Size("9.5");
         Criteria bids = new Bids();

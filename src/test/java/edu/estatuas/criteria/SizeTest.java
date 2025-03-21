@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import edu.estatuas.item.Ask;
@@ -12,10 +13,14 @@ import edu.estatuas.item.Offer;
 import edu.estatuas.item.Sneaker;
 
 public class SizeTest {
+    private Sneaker sneaker;
+    @Before
+    public void setup() {
+        sneaker = new Sneaker("555088-105", "Jordan 1");  
+    }
     
     @Test
     public void checkCriteriaSize() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Bid("8", 250));
         sneaker.add(new Bid("12", 800));
         sneaker.add(new Bid("5", 120));
@@ -34,7 +39,6 @@ public class SizeTest {
 
     @Test
     public void checkCriteriaSizeEmpty() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
 
         String searchSize = "8";
 
@@ -46,7 +50,6 @@ public class SizeTest {
 
     @Test
     public void checkCriteriaSizeEmptyWithOtherCriteria() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Bid("8", 250));
         sneaker.add(new Bid("12", 800));
         sneaker.add(new Bid("5", 120));

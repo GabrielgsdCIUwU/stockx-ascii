@@ -5,6 +5,7 @@ import static org.junit.Assume.assumeTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import edu.estatuas.item.Bid;
@@ -13,10 +14,14 @@ import edu.estatuas.item.Sale;
 import edu.estatuas.item.Sneaker;
 
 public class SalesTest {
-
+private Sneaker sneaker;
+    @Before
+    public void setup() {
+        sneaker = new Sneaker("555088-105", "Jordan 1");  
+    }
+    
     @Test
     public void checkCriteriaSales() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Sale("9.5", 352));
         sneaker.add(new Sale("9.5", 404));
         sneaker.add(new Sale("13", 360));
@@ -30,7 +35,6 @@ public class SalesTest {
 
     @Test
     public void checkCriteriaSalesBids() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Sale("9.5", 352));
         sneaker.add(new Sale("9.5", 404));
         sneaker.add(new Bid("8", 250));
@@ -45,7 +49,6 @@ public class SalesTest {
 
     @Test
     public void checkCriteriaSalesEmpty() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
 
         Criteria sales = new Sales();
         List<Offer> criteriaSales = sales.checkCriteria(sneaker);

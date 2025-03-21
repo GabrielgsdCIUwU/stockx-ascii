@@ -3,6 +3,8 @@ package edu.estatuas.criteria;
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
 import org.junit.Test;
 
 import edu.estatuas.item.Ask;
@@ -11,10 +13,14 @@ import edu.estatuas.item.Offer;
 import edu.estatuas.item.Sneaker;
 
 public class BidsTest {
-    
+    private Sneaker sneaker;
+    @Before
+    public void setup() {
+        sneaker = new Sneaker("555088-105", "Jordan 1");  
+    }
+
     @Test
     public void checkCriteriaBids() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Bid("8", 250));
         sneaker.add(new Bid("12", 800));
         sneaker.add(new Bid("5", 120));
@@ -27,7 +33,6 @@ public class BidsTest {
 
     @Test
     public void checkCriteriaBidsAsks() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Bid("8", 250));
         sneaker.add(new Bid("12", 800));
         sneaker.add(new Ask("15", 288));
@@ -42,7 +47,6 @@ public class BidsTest {
 
     @Test
     public void checkCriteriaBidsEmpty() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
 
         Criteria bids = new Bids();
         List<Offer> criteriaBids = bids.checkCriteria(sneaker);

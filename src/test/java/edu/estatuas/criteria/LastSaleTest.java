@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import edu.estatuas.item.Ask;
@@ -13,10 +14,14 @@ import edu.estatuas.item.Sale;
 import edu.estatuas.item.Sneaker;
 
 public class LastSaleTest {
+    private Sneaker sneaker;
+    @Before
+    public void setup() {
+        sneaker = new Sneaker("555088-105", "Jordan 1");  
+    }
     
     @Test
     public void getLastSale() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Sale("9.5", 352));
         sneaker.add(new Sale("9.5", 404));
         sneaker.add(new Sale("13", 360));
@@ -32,7 +37,6 @@ public class LastSaleTest {
 
     @Test
     public void getLastSaleWithAsk() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Sale("9.5", 404));
         sneaker.add(new Sale("13", 360));
         sneaker.add(new Ask("5", 20));
@@ -47,7 +51,6 @@ public class LastSaleTest {
 
     @Test
     public void getLastSaleEmpty() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
 
         Criteria lastSale = new LastSale();
         List<Offer> lastSaleOffer = lastSale.checkCriteria(sneaker);

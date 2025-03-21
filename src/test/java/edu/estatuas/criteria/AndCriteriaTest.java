@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import edu.estatuas.item.Ask;
@@ -13,10 +14,14 @@ import edu.estatuas.item.Sale;
 import edu.estatuas.item.Sneaker;
 
 public class AndCriteriaTest {
-    
+    Sneaker sneaker;
+    @Before
+    public void setup() {
+        sneaker = new Sneaker("555088-105", "Jordan 1");
+    }
     @Test
     public void checkCriteriaAndCriteria() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
+        
         sneaker.add(new Sale("9.5", 352));
         sneaker.add(new Sale("9.5", 404));
         sneaker.add(new Sale("13", 360));
@@ -34,7 +39,6 @@ public class AndCriteriaTest {
 
     @Test
     public void checkCriteriaAndCriteriaWithAsk() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Sale("9.5", 352));
         sneaker.add(new Sale("9.5", 404));
         sneaker.add(new Ask("9.5", 333));
@@ -52,7 +56,6 @@ public class AndCriteriaTest {
 
     @Test
     public void checkCriteriaAndCriteriaEmpty() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
 
         Criteria size = new Size("9.5");
         Criteria sale = new Sales();

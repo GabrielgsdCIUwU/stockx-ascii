@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import edu.estatuas.item.Ask;
@@ -13,10 +14,14 @@ import edu.estatuas.item.Offer;
 import edu.estatuas.item.Sneaker;
 
 public class MinAskTest {
+    private Sneaker sneaker;
+    @Before
+    public void setup() {
+        sneaker = new Sneaker("555088-105", "Jordan 1");  
+    }
     
     @Test
     public void checkCriteriaMinAsk() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Ask("8", 50));
         sneaker.add(new Ask("12", 200));
         sneaker.add(new Ask("5", 20));
@@ -31,7 +36,6 @@ public class MinAskTest {
 
     @Test   
     public void checkCriteriaMinAskWithBid() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Ask("8", 50));
         sneaker.add(new Ask("12", 200));
         sneaker.add(new Bid("8", 25));
@@ -46,7 +50,6 @@ public class MinAskTest {
 
     @Test
     public void checkCriteriaMinAskEmpty() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
 
         Criteria minAsk = new MinAsk();
         List<Offer> criteriaMinAsk = minAsk.checkCriteria(sneaker);
