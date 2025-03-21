@@ -8,13 +8,19 @@ import org.junit.Test;
 public class SneakerTest {
 
     @Test
-    public void addOffer() {
-        String size = "19";
-        int bidValue = 255;
+    public void gettersAndSetters() {
+        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
 
-        Bid bid = new Bid(size, bidValue);
+        int sale = 50;
+        int ask = 25;
+        int bid = 40;
 
-        assertEquals(size, bid.size());
-        assertEquals(bidValue, bid.value());
+        sneaker.setSale(sale);
+        sneaker.setAsk(ask);
+        sneaker.setBid(bid);
+
+        assertEquals(sale, sneaker.getSale());
+        assertEquals(ask, sneaker.getAsk());
+        assertEquals(bid, sneaker.getBid());
     }
 }
